@@ -11,7 +11,7 @@ subway = {:n =>["ts", "34", "28n", "23n", "us", "8n"], :t6 => ["gc", "33", '28_6
 
 
 # collects first train
-puts "Entry train line: 'N', '6', or 'L'? "
+puts "Entry train line: #{subway.keys.join(", ").upcase}"
 userTrain1 = gets.chomp.upcase.to_s
 
 # sets variable userTrain1 to correct symbol and lists stations
@@ -38,7 +38,7 @@ get_on = gets.chomp.downcase.to_s
 
 # sets variable userTrain1 to correct symbol and lists stations
 
-puts "Exit train line: 'N', '6', or 'L'"
+puts "Exit train line: #{subway.keys.join(", ").upcase}"
 userTrain2 = gets.chomp.upcase.to_s
 
 case userTrain2
