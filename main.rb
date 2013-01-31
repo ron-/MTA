@@ -11,20 +11,20 @@ subway = {:n =>["ts", "34", "28n", "23n", "us", "8n"], :t6 => ["gc", "33", '28_6
 
 
 
-puts "Train Line 'N', '6', or 'L'? "
-userTrain = gets.chomp.upcase.to_s
+puts "Entry train line: 'N', '6', or 'L'? "
+userTrain1 = gets.chomp.upcase.to_s
 
-case userTrain
+case userTrain1
 when "N"
-  userTrain = :n
+  userTrain1 = :n
   puts "Available stations: "
   puts "ts, 34, 28n, 23n, us, 8n"
 when "6"
-  userTrain = :t6
+  userTrain1 = :t6
   puts "Available stations: "
   puts "gc, 33, 28_6, 23_6, us, ap"
 when "L"
-  userTrain = :l
+  userTrain1 = :l
   puts "Available stations"
   puts "8l, 6, us, 3, 1"
 else
@@ -34,6 +34,10 @@ end
 
 puts "Entry station?"
 get_on = gets.chomp.downcase.to_s
+
+
+puts "Exit train line: 'N', '6', or 'L'"
+userTrain2 = gets.chomp.upcase.to_s
 
 puts "Exit station?"
 get_off = gets.chomp.downcase.to_s
