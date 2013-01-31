@@ -19,7 +19,7 @@ case userTrain1
 when "N"
   userTrain1 = :n
   puts "Available stations: "
-  puts "ts, 34, 28n, 23n, us, 8n"
+  puts "#{subway[userTrain1]*", "}"
 when "6"
   userTrain1 = :t6
   puts "Available stations: "
@@ -29,7 +29,7 @@ when "L"
   puts "Available stations"
   puts "8l, 6, us, 3, 1"
 else
-  puts "No such train"
+  puts "No such train! GTFO!"
 end
 
 # ask user for entry station and sets variable get_on
@@ -55,16 +55,22 @@ when "L"
   puts "Available stations"
   puts "8l, 6, us, 3, 1"
 else
-  puts "No such train"
+  puts "No such train! GTFO!"
 end
 
 puts "Exit station?"
 get_off = gets.chomp.downcase.to_s
+if userTrain1 == userTrain2
+  stop1 = subway[userTrain1].index(get_on)
+  stop2 = subway[userTrain2].index(get_off)
+  num_stops = (stop1 - stop2).abs
+else
+  stop1 = subway[userTrain1].index("us") - subway[userTrain1].index(get_on)
+  stop2 = subway[userTrain2].index("us") - subway[userTrain2].index(get_off)
+  num_stops = stop1.abs + stop2.abs
+end
 
-stop1 = subway[userTrain1].index(get_on)
-stop2 = subway[userTrain2].index(get_off)
 
-num_stops = (stop1 - stop2).abs
 
 puts "You will travel #{num_stops} stops"
 
